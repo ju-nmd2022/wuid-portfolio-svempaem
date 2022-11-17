@@ -1,19 +1,17 @@
 * { 
     margin: 0%;
     padding: 0%; 
+    font-family: Helvetica, Arial, sans-serif;
+    background: #ececec;
+}
+p, h1, h2, h3, h4, h5, h6, ul, ol, li, form, input, button {
+    background: rgba(0, 0, 0, 0);
 } 
-h4 {
-    margin: 1%;
-}
-p, form{
-    font-family: Garamond, 'Times New Roman', Times, serif;
-}
-
 h1, h2, h3 {
-    color: #ffffff;
-    background-color: #124394;
+    color: #4C4647;
     text-align: left;
-    font-family: Helvetica Neue, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
     text-indent: 10px;
 } 
 h1 {
@@ -23,23 +21,63 @@ h1 {
 li:hover {
     font-weight: bold;
 }
-.contact {
+#contact {
     text-align: center;
     font-style: italic;
     font-family: Helvetica Neue, Arial, sans-serif;
 }
-.gridcon {
+.topbar {
+    width: 100wv;
+    background-color: black;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 10% 16% 16% 16% 16% 16% 10%;
+    grid-template-rows: auto;
     grid-template-areas: 
-    "p .";
-    text-align: left;
+    ". . header header header . ."
+    ". . aboutme portfolio aboutjkpg . ."
 }
-.container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    gap: 50px;
+#selogo {
+    max-width: 50%;
+    max-height: auto;
+    grid-area: header;
+    padding: 2%;
+    place-self: center;
+    background-color: #000000;
+}
+#aboutme {
+    grid-area: aboutme;
+}
+#aboutjkpg {
+    grid-area: aboutjkpg;
+}
+#portfolio{
+    grid-area: portfolio;
+}
+#toplink:visited {
+    background-color: #000000;
+}
+#aboutme, #aboutjkpg, #portfolio {
+    color: #ffffff;
+    place-self: center;
+    background-color: #000000;
+}
+.midcon {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    padding-top: 2%;
+    padding-bottom: 200px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+#body {
+    grid-column: 2/5;
+    place-self: left;
+}
+h3 {
+    grid-column: 2/5;
+    grid-row: auto;
+    place-self: left;
 }
 .asian {
 background-color: #b92938;
@@ -57,4 +95,114 @@ p,ul,form {
 }
 ul {
     list-style-type: circle;
+}
+footer {
+    color: #ffffff;
+    background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+.portcontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    grid-column-gap: 40px;
+    grid-row-gap: 25px;  
+    padding-top: 2%;
+    padding-bottom: 200px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.port1 {
+    grid-column: 1;
+    grid-row: 1;    
+}
+.port2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+.port3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+.port4 {
+    grid-column: 1;
+    grid-row: 2;
+}
+.port5 {
+    grid-column: 2;
+    grid-row: 2;
+}
+.port1:hover, .port2:hover, .port3:hover, .port4:hover, .port5:hover {
+    transform: scale(1.02);
+}
+.port1, .port2, .port3, .port4, .port5 {
+   /* the following 1 line of code for box shadows was created by figma */
+    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
+    contain: content;
+    border-radius: 25px;
+    height: 650px;
+    background-color: #ffffff;
+}
+.porttext {
+    padding: 0%;
+    margin: 0%;
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    background-color: #FFFFFF;
+}
+#portimage {
+   max-width: 100%;
+   height: 490px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+}
+#portlink {
+    color: #000000;
+}
+#portlink:visited {
+    color: #000000;
+}
+.portdetimagecon {
+    background-color: #ffffff;
+    contain: content;
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 700px;
+    margin-top: 2%;
+    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+}
+#portdetimage {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #ffffff;
+}
+.portdettextcon {
+    background-color: #ffffff;
+    contain: content;
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 1px;
+    margin-top: 1%;
+    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    padding-bottom: 200px;
+}
+#portdettext {
+    background-color: #FFFFFF;
+    padding: 5%;
+    margin: auto;
 }
