@@ -1,209 +1,344 @@
-* { 
-    margin: 0%;
-    padding: 0%; 
-    font-family: Helvetica, Arial, sans-serif;
-    background: #ececec;
-    font-size: 1rem;
+
+html,body {
+    background-color: #b3b3b3;
+    height: 100%;
 }
-p, h1, h2, h3, h4, h5, h6, ul, ol, li, form, input, button {
-    background: rgba(0, 0, 0, 0);
-} 
-h1, h2, h3 {
-    color: #4C4647;
-    text-align: left;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    text-indent: 10px;
-} 
-h1 {
-    text-align: center;
-    text-indent: 0px;
+body {
+    margin: 0px;
+    padding: 0px;
 }
-li:hover {
-    font-weight: bold;
+/* The following 3 lines of code were taken from https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
+.pagecontainer {
+    position: relative;
+    min-height: 100vh;
 }
-#contact {
-    text-align: center;
-    font-style: italic;
-    font-family: Helvetica Neue, Arial, sans-serif;
+/* header */
+header {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, #000000 50%, rgba(0, 0, 0, 0.8) 100%);
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    contain: content;
 }
-.topbar {
-    width: 100wv;
-    background-color: black;
-    display: grid;
-    grid-template-columns: 10% 16% 16% 16% 16% 16% 10%;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    ". . header header header . ."
-    ". . aboutme portfolio aboutjkpg . ."
+#burgermenu {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    visibility: hidden;
 }
-#selogo {
-    max-width: 50%;
-    max-height: auto;
-    grid-area: header;
-    padding: 2%;
-    place-self: center;
-    background-color: #000000;
-}
-#aboutme {
-    grid-area: aboutme;
-}
-#aboutjkpg {
-    grid-area: aboutjkpg;
-}
-#portfolio{
-    grid-area: portfolio;
-}
-#toplink:visited {
-    background-color: #000000;
-}
-#aboutme, #aboutjkpg, #portfolio {
-    color: #ffffff;
-    place-self: center;
-    background-color: #000000;
-}
-.midcon {
+.headcontainer {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
-    padding-top: 2%;
-    padding-bottom: 200px;
-    padding-left: 20%;
-    padding-right: 20%;
+    grid-template-rows: repeat(3, 1fr) ;
+}
+#headbutton1 {
+    grid-column: 2;
+    grid-row: 2;
+}
+#headbutton2 {
+    grid-column: 3;
+    grid-row: 2;
+}
+#headbutton3 {
+    grid-column: 4;
+    grid-row: 2;
+}
+#headbutton1,#headbutton2,#headbutton3 {
+    font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    padding-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#selogo {
+    padding-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-column: 2/5;
+    grid-row: 1;
+    width: 450px;
+    height: auto;
+    max-width: 100%;
+    max-height: auto;
+}
+/* bodywrap */
+.wrap {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+/* footer */
+.footcontainer {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, #000000 50%, rgba(0, 0, 0, 0.8) 100%);
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+}
+.container {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: auto;
+}
+.detailcard {
+    grid-column: 1/3;
+    width: 300px;
+    height: 400px;
+    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 5%;
+    border-radius: 25px;
+    background-color: #b3b3b3;
+    contain: content;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.detailcardpic {
+    height: auto;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.detailcardtext {
+    font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    position: absolute;
+    top: 540px;
+    left: 18px;
+}
+.card,.card2,.card3,.card4,.card5 {
+    width: 200px;
+    height: 300px;
+    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 20%;
+    border-radius: 25px;
+    background-color: #b3b3b3;
+    contain: content;
+    overflow: hidden;
+}
+.card:hover,.card2:hover,.card3:hover,.card4:hover,.card5:hover {
+    transform: scale(1.04);
+}
+.card {
+    margin-left: auto;
+    margin-right: 10px;
+}
+.card3 {
+    margin-right: auto;
+    margin-left: 10px;
+}
+.card2,.card4,.card5 {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Margins for bottom and top */
+.card,.card2,.card3 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.card4,.card5 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.card {
+    grid-column: 1;
+    }
+.card2 {
+    grid-column: 2;
+   
+    }
+.card3 {
+        grid-column: 3;
+        }
+        .card4 {
+            grid-column: 1/3;
+            grid-row: 2;
+            }
+            .card5 {
+                grid-column: 2/4;
+                grid-row: 2;
+                }
+.cardtext {
+    font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    position: absolute;
+    top: 190px;
+    left: 18px;
+}
+.carddesc {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+}
+.cardpic {
+    height: 200px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 #body {
-    grid-column: 2/5;
-    place-self: left;
+    grid-column: 2;
 }
-h3 {
-    grid-column: 2/5;
-    grid-row: auto;
-    place-self: left;
+h3{
+    grid-column: 2;
 }
-.asian {
-background-color: #b92938;
-color: white;
+@media screen and (max-width: 870px) and (min-width: 545px)  {
+    /* header */
+header {
+    height: 70px;
+    position: absolute;
+    top: 0px;
+    contain: content;
 }
-.pizza {
-    background-image: linear-gradient(green,white,red);
-}
-.burger {
-    background-color: rgb(213, 213, 179);
-}
-p,ul,form {
- padding: 1%;  
- margin: 1%; 
-}
-ul {
-    list-style-type: circle;
-}
-footer {
-    color: #ffffff;
-    background-color: #000000;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-}
-.portcontainer {
+.headcontainer {
     display: grid;
-    grid-template-columns: repeat(4, 25%); 
-    grid-template-rows: repeat(3, 1fr); 
-    grid-column-gap: 3%;
-    grid-row-gap: 3%;  
-    padding-top: 2%;
-    padding-bottom: 40vh;
-    padding-left: 20%;
-    padding-right: 20%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr) ;
 }
-.port1 {
-    grid-column: 1/3;
-    grid-row: 1;    
+#selogo {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    width: 400px;
+    height: auto;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-bottom: 10px;
 }
-.port2 {
-    grid-column: 3/5;
+#headbutton1 {
+    grid-column: 4;
     grid-row: 1;
 }
-.port3 {
-    grid-column: 1/3;
+#headbutton2 {
+    grid-column: 5;
+    grid-row: 1;
+}
+#headbutton3 {
+    grid-column: 4/6;
     grid-row: 2;
 }
-.port4 {
-    grid-column: 3/5;
-    grid-row: 2;
+#headbutton1,#headbutton2,#headbutton3 {
+    font-size: 10pt;
+    margin-bottom: 1px;
+    padding-bottom: 1px;
 }
-.port5 {
-    grid-column: 1/5;
-    grid-row: 3;
+    .card {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+    .card2,.card4 {
+        margin-left: 10px;
+        margin-right: auto;
+    }
+    .card3 {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+    .card5 {
+        margin-left: auto;
+    margin-right: auto;
+    }
+    /* Margins for bottom and top */
+    .card,.card2 {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+    .card3,.card4 {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .card5 {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .card {
+        grid-column: 1;
+        }
+        .card2 {
+            grid-column: 2;
+            }
+        .card3 {
+                grid-column: 1;
+                }
+                .card4 {
+                    grid-column: 2;
+                    }
+                .card5 {
+                        grid-column: 1/3;
+                        grid-row: 3;
+                        }
+        .container {
+        display: grid;
+    grid-template-columns: repeat(2, 1fr);
+        }
 }
-.port1:hover, .port2:hover, .port3:hover, .port4:hover, .port5:hover {
-    transform: scale(1.02);
+@media screen and (max-width: 670px) {
+    #headbutton1,#headbutton2,#headbutton3 {
+        visibility: hidden;
+    }
+    #burgermenu {
+        visibility: visible;
+    }
 }
-.port1, .port2, .port3, .port4, .port5 {
-   /* the following 1 line of code for box shadows was created by figma */
-    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
+@media screen and (max-width: 545px)  {
+        /* header */
+header {
+    height: 70px;
+    position: absolute;
+    top: 0px;
     contain: content;
-    border-radius: 25px;
-    height: 50vw;
-    background-color: #ffffff;
 }
-.porttext {
-    padding: 5%;
-    margin: 0%;
-    background-color: #FFFFFF;
+.headcontainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr) ;
 }
-#portimage {
-   max-width: 100%;
-   height: 35vw;
-    width: auto;
-    display: block;
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    background-color: #ffffff;
+#selogo {
+    grid-column: 1/4;
+    grid-row: 1;
+    padding-top: 13%;
+    width: 230px;
+    height: auto;
+    padding-left: 10%;
 }
-#portlink {
-    color: #000000;
-}
-#portlink:visited {
-    color: #000000;
-}
-.portdetimagecon {
-    background-color: #ffffff;
-    contain: content;
-    width: 20%;
-    margin-right: auto;
-    margin-left: auto;
-    height: 700px;
-    margin-top: 2%;
-    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
-    border-radius: 25px;
-}
-#portdetimage {
-    max-width: 90%;
-    max-height: 90%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    background-color: #ffffff;
-}
-.portdettextcon {
-    background-color: #ffffff;
-    contain: content;
-    width: 20%;
-    margin-right: auto;
-    margin-left: auto;
-    height: 1px;
-    margin-top: 1%;
-    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
-    border-radius: 25px;
-    padding-bottom: 200px;
-}
-#portdettext {
-    background-color: #FFFFFF;
-    padding: 5%;
-    margin: auto;
+    .card,.card2,.card3,.card4,.card5 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Margins for bottom and top */
+    .card {
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+    .card2,.card3,.card4 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .card5 {
+        margin-top: 15px;
+        margin-bottom: 50px;
+    }
+    .card {
+        grid-column: 1;
+        }
+        .card2 {
+            grid-column: 1;
+            grid-row: 2;
+            }
+        .card3 {
+                grid-column: 1;
+                grid-row: 3;
+                }
+                .card4 {
+                    grid-column: 1;
+                    grid-row: 4;
+                    }
+                .card5 {
+                        grid-column: 1;
+                        grid-row: 5;
+                        }
+        .container {
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+        }
 }
