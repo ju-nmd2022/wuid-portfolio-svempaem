@@ -1,6 +1,6 @@
 
 html,body {
-    background-color: #cecece;
+    background-color: #ededed;
     height: 100%;
 }
 body {
@@ -139,7 +139,7 @@ grid-template-rows: auto;
     contain: content;
     overflow: hidden;
 }
-.card:hover,.card2:hover,.card3:hover,.card4:hover,.card5:hover {
+.card:hover,.card2:hover,.card3:hover,.card4:hover,.card5:hover,.imdbcard:hover {
     transform: scale(1.015);
     box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
@@ -254,7 +254,7 @@ a:link,a:visited,a:hover,a:active {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-#breakingbad,#prisonbreak,#siliconvalley {
+.imdbcard {
     background-color: white;
     width: 200px;
     height: 370px;
@@ -299,6 +299,60 @@ a:link,a:visited,a:hover,a:active {
     font-family: helvetica, Arial, sans-serif;
     height: 20px;
     font-size: 17px;
+}
+.musiccontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.musiccard {
+    background-color: white;
+    width: 200px;
+    height: 260px;
+    border-radius: 25px;
+    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
+    contain: content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.musicimage {
+    max-width: 100%;
+    width: 160px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+}
+.musictext {
+    padding: 0%;
+    margin: 0%;
+    position: absolute;
+    left: 20px;
+    width: 160px;
+    bottom: 25px;
+    font-family: helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.musicsub {
+    padding: 0%;
+    margin: 0%;
+    position: absolute;
+    left: 20px;
+    width: 160px;
+    bottom: 47px;
+    font-family: helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 12pt;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 @media screen and (max-width: 960px) and (min-width: 760px) {
     .card,.card4 {
