@@ -53,6 +53,9 @@ header {
     margin-left: auto;
     margin-right: auto;
 }
+.headlink:link,.headlink:visited,.headlink:hover,.headlink:active {
+    color: #FFFFFF;
+}
 #selogo {
     padding-top: 15px;
     margin-left: auto;
@@ -70,14 +73,12 @@ header {
     padding-bottom: 100px;
 }
 /* footer */
-footer {
+.footcontainer {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, #000000 50%, rgba(0, 0, 0, 0.8) 100%);
     width: 100%;
     height: 100px;
     position: absolute;
     bottom: 0px;
-}
-.footcontainer {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
@@ -90,15 +91,16 @@ footer {
 }
 .container {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(4, 1fr);
 grid-template-rows: auto;
 }
 .detailcard {
-    grid-column: 2;
-    width: 300px;
+    grid-column: 2/4;
+    width: 600px;
     height: 400px;
     box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
     margin-top: 5%;
+    margin-bottom: 5%;
     border-radius: 25px;
     background-color: #ffffff;
     contain: content;
@@ -106,9 +108,16 @@ grid-template-rows: auto;
     margin-left: auto;
     margin-right: auto;
 }
+.detcardpiccon {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    contain: content;
+}
 .detailcardpic {
-    height: auto;
-    width: 200px;
+    display: flex;
+    height: 400px;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -116,11 +125,12 @@ grid-template-rows: auto;
     font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
     font-size: 10pt;
     position: absolute;
-    top: 540px;
-    left: 18px;
+    top: 10px;
+    left: 315px;
+    width: 270px;
 }
 .card,.card2,.card3,.card4,.card5 {
-    width: 200px;
+    width: 400px;
     height: 300px;
     box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
     margin-top: 20%;
@@ -130,54 +140,86 @@ grid-template-rows: auto;
     overflow: hidden;
 }
 .card:hover,.card2:hover,.card3:hover,.card4:hover,.card5:hover {
-    transform: scale(1.04);
+    transform: scale(1.015);
+    box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+/* image sources for portfolio cards */
+.cardimage1 {
+    background: url(port1.pdf);
+}
+.cardimage2 {
+    background: url(port2.pdf);
+}
+.cardimage3 {
+    background: url(port3.png);
+}
+.cardimage4 {
+    background: url(port4.png);
+}
+.cardimage5 {
+    background: url(port5.png);
+}
+.cardimage1,.cardimage2,.cardimage3,.cardimage4,.cardimage5 {
+    position: absolute; 
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 300px;
+    left: 50%;
+    bottom: 0%;
 }
 /* specific margins for cards */
-.card {
+.card,.card3 {
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 30px;
 }
-.card3 {
+.card2,.card4 {
     margin-right: auto;
-    margin-left: 10px;
+    margin-left: 30px;
 }
-.card2,.card4,.card5 {
+.card5 {
     margin-left: auto;
     margin-right: auto;
 }
 /* Margins for bottom and top */
-.card,.card2,.card3 {
+.card,.card2 {
     margin-top: 50px;
     margin-bottom: 30px;
 }
-.card4,.card5 {
+.card3,.card4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.card5 {
     margin-top: 30px;
     margin-bottom: 50px;
 }
+/* grid columns for cards */
 .card {
-    grid-column: 1;
+    grid-column: 2;
     }
 .card2 {
-    grid-column: 2;
-   
+    grid-column: 3;
     }
 .card3 {
-        grid-column: 3;
+        grid-column: 2;
+        grid-row: 2;
         }
         .card4 {
-            grid-column: 1/3;
+            grid-column: 3;
             grid-row: 2;
             }
             .card5 {
                 grid-column: 2/4;
-                grid-row: 2;
+                grid-row: 3;
                 }
 .cardtext {
     font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
     font-size: 10pt;
     position: absolute;
-    top: 190px;
-    left: 18px;
+    top: 10px;
+    left: 15px;
+    width: 170px;
 }
 .carddesc {
     font-family: Helvetica, Arial, sans-serif;
@@ -189,11 +231,82 @@ grid-template-rows: auto;
     margin-left: auto;
     margin-right: auto;
 }
+/* the following 7 lines of code were taken from https://www.w3docs.com/snippets/css/how-to-make-a-div-a-clickable-link.html */
+.cardlink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.cardlink:link,.cardlink:visited,.cardlink:hover,.cardlink:active {
+    color: #000000;
+}
 #body {
-    grid-column: 2;
+    grid-column: 2/4;
+    font-family: Helvetica, Arial, sans-serif;
 }
 h3{
     grid-column: 2;
+    font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
+}
+a:link,a:visited,a:hover,a:active {
+    text-decoration: none;
+}
+@media screen and (max-width: 960px) and (min-width: 760px) {
+    .card,.card4 {
+        width: 200px;
+        height: 660px;
+    }
+    /* grid positions for portfolio cards */
+    .card {
+        grid-column: 2;
+        grid-row: 1/span 2;
+    }
+    .card2 {
+        grid-column: 3;
+        grid-row: 1;
+    }
+    .card3 {
+        grid-column: 3;
+        grid-row: 2;
+    }
+    .card4 {
+        grid-column: 2;
+        grid-row: 3/span 2;
+    }
+    .card5 {
+        grid-column: 3;
+        grid-row: 3;
+    }
+    /* specific margins for cards */
+.card,.card4 {
+    margin-left: auto;
+    margin-right: 30px;
+}
+.card2,.card3,.card5 {
+    margin-right: auto;
+    margin-left: 30px;
+}
+/* Margins for bottom and top */
+.card,.card2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.card3,.card4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.card5 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.cardimage1,.cardimage4 {
+    width: 200px;
+    height: 300px;
+    left: 0px;
+}
 }
 @media screen and (max-width: 870px) and (min-width: 545px)  {
     /* header */
@@ -241,10 +354,10 @@ header {
 #body {
  grid-column: 2/4;
 }
-footer {
+.footcontainer {
     height: 70px;
 }
-.container {
+/* .container {
     display: grid;
 grid-template-columns: repeat(4, 1fr);
     }
@@ -263,12 +376,12 @@ grid-template-columns: repeat(4, 1fr);
     .card5 {
         margin-left: auto;
     margin-right: auto;
-    }
+    } */
     .detailcard {
         grid-column: 2/4;
     }
     /* Margins for bottom and top */
-    .card,.card2 {
+    /* .card,.card2 {
         margin-top: 50px;
         margin-bottom: 30px;
     }
@@ -279,9 +392,9 @@ grid-template-columns: repeat(4, 1fr);
     .card5 {
         margin-top: 30px;
         margin-bottom: 50px;
-    }
-    /* grid columns for cards */
-    .card {
+    } */
+    /* grid columns for portfolio cards */
+    /* .card {
         grid-column: 2;
         }
         .card2 {
@@ -296,7 +409,29 @@ grid-template-columns: repeat(4, 1fr);
                 .card5 {
                         grid-column: 2/4;
                         grid-row: 3;
+                        } */
+}
+@media screen and (max-width: 760px) {
+    .card,.card2,.card3,.card4,.card5 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+        /* grid positions for cards */
+        .card {
+            grid-column: 2/4;
+            }
+            .card2 {
+                grid-column: 2/4;
+                }
+            .card3 {
+                    grid-column: 2/4;
+                    }
+                    .card4 {
+                        grid-column: 2/4;
                         }
+                    .card5 {
+                            grid-column: 2/4;
+                            }
 }
 @media screen and (max-width: 670px) {
     #headbutton1,#headbutton2,#headbutton3 {
@@ -304,6 +439,14 @@ grid-template-columns: repeat(4, 1fr);
     }
     #burgermenu {
         visibility: visible;
+    }
+    .detailcard {
+        width: 300px;
+        height: 800px;
+    }
+    .detailcardtext {
+        top: 410px;
+        left: 15px;
     }
 }
 @media screen and (max-width: 545px)  {
@@ -326,52 +469,15 @@ header {
     margin-bottom: 20px;
     place-self: center;
 }
+}
+@media screen and (max-width: 490px) {
     .card,.card2,.card3,.card4,.card5 {
-        margin-left: auto;
-        margin-right: auto;
+        width: 200px;
+        height: 660px;
     }
-    /* Margins for cards */
-    .card {
-        margin-top: 50px;
-        margin-bottom: 15px;
+    .cardimage1,.cardimage2,.cardimage3,.cardimage4,.cardimage5 {
+        width: 200px;
+        height: 300px;
+        left: 0px;
     }
-    .card2,.card3,.card4 {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    .card5 {
-        margin-top: 15px;
-        margin-bottom: 50px;
-    }
-    .card,.card2,.card3,.card4,.card5 {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    /* grid positions for cards */
-    .card {
-        grid-column: 3;
-        }
-        .card2 {
-            grid-column: 3;
-            grid-row: 2;
-            }
-        .card3 {
-                grid-column: 3;
-                grid-row: 3;
-                }
-                .card4 {
-                    grid-column: 3;
-                    grid-row: 4;
-                    }
-                .card5 {
-                        grid-column: 3;
-                        grid-row: 5;
-                        }
-        .container {
-        display: grid;
-    grid-template-columns: repeat(5, 1fr);
-        }
-        #body {
-            grid-column: 2/5;
-        }
 }
