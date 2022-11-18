@@ -19,7 +19,6 @@ header {
     height: 100px;
     position: absolute;
     top: 0px;
-    contain: content;
 }
 #burgermenu {
     width: 20px;
@@ -33,6 +32,7 @@ header {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr) ;
+    contain: content;
 }
 #headbutton1 {
     grid-column: 2;
@@ -69,8 +69,8 @@ header {
 }
 /* bodywrap */
 .wrap {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 200px;
 }
 /* footer */
 .footcontainer {
@@ -182,17 +182,9 @@ grid-template-rows: auto;
     margin-right: auto;
 }
 /* Margins for bottom and top */
-.card,.card2 {
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-.card3,.card4 {
+.card,.card2,.card3,.card4,.card5 {
     margin-top: 30px;
     margin-bottom: 30px;
-}
-.card5 {
-    margin-top: 30px;
-    margin-bottom: 50px;
 }
 /* grid columns for cards */
 .card {
@@ -215,7 +207,7 @@ grid-template-rows: auto;
                 }
 .cardtext {
     font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
-    font-size: 10pt;
+    font-size: 13pt;
     position: absolute;
     top: 10px;
     left: 15px;
@@ -223,7 +215,7 @@ grid-template-rows: auto;
 }
 .carddesc {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 9pt;
+    font-size: 11pt;
 }
 .cardpic {
     height: 200px;
@@ -246,13 +238,67 @@ grid-template-rows: auto;
 #body {
     grid-column: 2/4;
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
 }
 h3{
     grid-column: 2;
     font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
+    font-size: 19pt;
 }
 a:link,a:visited,a:hover,a:active {
     text-decoration: none;
+}
+.imdbcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#breakingbad,#prisonbreak,#siliconvalley {
+    background-color: white;
+    width: 200px;
+    height: 370px;
+    border-radius: 25px;
+    box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
+    contain: content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.imdbimage {
+    max-width: 100%;
+    width: 160px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+}
+.imdbtext {
+    position: absolute;
+    left: 20px;
+    width: 160px;
+    top: 255px;
+    font-family: helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+}
+.imdblogo {
+    width: auto;
+    height: 20px;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}
+.imdbrating {
+    padding: 0%;
+    margin: 0%;
+    position: absolute;
+    bottom: 51px;
+    left: 67px;
+    font-family: helvetica, Arial, sans-serif;
+    height: 20px;
+    font-size: 17px;
 }
 @media screen and (max-width: 960px) and (min-width: 760px) {
     .card,.card4 {
@@ -289,26 +335,13 @@ a:link,a:visited,a:hover,a:active {
     margin-right: auto;
     margin-left: 30px;
 }
-/* Margins for bottom and top */
-.card,.card2 {
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-.card3,.card4 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.card5 {
-    margin-top: 30px;
-    margin-bottom: 50px;
-}
 .cardimage1,.cardimage4 {
     width: 200px;
     height: 300px;
     left: 0px;
 }
 }
-@media screen and (max-width: 870px) and (min-width: 545px)  {
+@media screen and (max-width: 870px) {
     /* header */
 header {
     height: 70px;
@@ -348,14 +381,11 @@ header {
     padding-bottom: 1px;
 }
 .wrap {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 120px;
+    padding-bottom: 200px;
 }
 #body {
  grid-column: 2/4;
-}
-.footcontainer {
-    height: 70px;
 }
 /* .container {
     display: grid;
@@ -380,36 +410,6 @@ grid-template-columns: repeat(4, 1fr);
     .detailcard {
         grid-column: 2/4;
     }
-    /* Margins for bottom and top */
-    /* .card,.card2 {
-        margin-top: 50px;
-        margin-bottom: 30px;
-    }
-    .card3,.card4 {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    .card5 {
-        margin-top: 30px;
-        margin-bottom: 50px;
-    } */
-    /* grid columns for portfolio cards */
-    /* .card {
-        grid-column: 2;
-        }
-        .card2 {
-            grid-column: 3;
-            }
-        .card3 {
-                grid-column: 2;
-                }
-                .card4 {
-                    grid-column: 3;
-                    }
-                .card5 {
-                        grid-column: 2/4;
-                        grid-row: 3;
-                        } */
 }
 @media screen and (max-width: 760px) {
     .card,.card2,.card3,.card4,.card5 {
@@ -450,13 +450,6 @@ grid-template-columns: repeat(4, 1fr);
     }
 }
 @media screen and (max-width: 545px)  {
-        /* header */
-header {
-    height: 70px;
-    position: absolute;
-    top: 0px;
-    contain: content;
-}
 .headcontainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
