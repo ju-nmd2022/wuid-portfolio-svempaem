@@ -1,6 +1,6 @@
 
 html,body {
-    background-color: #b3b3b3;
+    background-color: #cecece;
     height: 100%;
 }
 body {
@@ -70,12 +70,23 @@ header {
     padding-bottom: 100px;
 }
 /* footer */
-.footcontainer {
+footer {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, #000000 50%, rgba(0, 0, 0, 0.8) 100%);
     width: 100%;
     height: 100px;
     position: absolute;
     bottom: 0px;
+}
+.footcontainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+}
+#footinfo {
+    font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    grid-column: 3;
+    place-self: center;
 }
 .container {
 display: grid;
@@ -83,13 +94,13 @@ grid-template-columns: repeat(3, 1fr);
 grid-template-rows: auto;
 }
 .detailcard {
-    grid-column: 1/3;
+    grid-column: 2;
     width: 300px;
     height: 400px;
     box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
     margin-top: 5%;
     border-radius: 25px;
-    background-color: #b3b3b3;
+    background-color: #ffffff;
     contain: content;
     overflow: hidden;
     margin-left: auto;
@@ -114,13 +125,14 @@ grid-template-rows: auto;
     box-shadow: -5px -5px 25px #FFFFFF, 5px 5px 25px rgba(0, 0, 0, 0.5);
     margin-top: 20%;
     border-radius: 25px;
-    background-color: #b3b3b3;
+    background-color: #ffffff;
     contain: content;
     overflow: hidden;
 }
 .card:hover,.card2:hover,.card3:hover,.card4:hover,.card5:hover {
     transform: scale(1.04);
 }
+/* specific margins for cards */
 .card {
     margin-left: auto;
     margin-right: 10px;
@@ -222,6 +234,20 @@ header {
     margin-bottom: 1px;
     padding-bottom: 1px;
 }
+.wrap {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+#body {
+ grid-column: 2/4;
+}
+footer {
+    height: 70px;
+}
+.container {
+    display: grid;
+grid-template-columns: repeat(4, 1fr);
+    }
     .card {
         margin-left: auto;
         margin-right: 10px;
@@ -238,6 +264,9 @@ header {
         margin-left: auto;
     margin-right: auto;
     }
+    .detailcard {
+        grid-column: 2/4;
+    }
     /* Margins for bottom and top */
     .card,.card2 {
         margin-top: 50px;
@@ -251,26 +280,23 @@ header {
         margin-top: 30px;
         margin-bottom: 50px;
     }
+    /* grid columns for cards */
     .card {
-        grid-column: 1;
+        grid-column: 2;
         }
         .card2 {
-            grid-column: 2;
+            grid-column: 3;
             }
         .card3 {
-                grid-column: 1;
+                grid-column: 2;
                 }
                 .card4 {
-                    grid-column: 2;
+                    grid-column: 3;
                     }
                 .card5 {
-                        grid-column: 1/3;
+                        grid-column: 2/4;
                         grid-row: 3;
                         }
-        .container {
-        display: grid;
-    grid-template-columns: repeat(2, 1fr);
-        }
 }
 @media screen and (max-width: 670px) {
     #headbutton1,#headbutton2,#headbutton3 {
@@ -290,22 +316,21 @@ header {
 }
 .headcontainer {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(1, 1fr) ;
+    grid-template-columns: repeat(3, 1fr);
 }
 #selogo {
     grid-column: 1/4;
-    grid-row: 1;
-    padding-top: 13%;
-    width: 230px;
+    width: 300px;
     height: auto;
-    padding-left: 10%;
+    margin-left:20px ;
+    margin-bottom: 20px;
+    place-self: center;
 }
     .card,.card2,.card3,.card4,.card5 {
         margin-left: auto;
         margin-right: auto;
     }
-    /* Margins for bottom and top */
+    /* Margins for cards */
     .card {
         margin-top: 50px;
         margin-bottom: 15px;
@@ -318,27 +343,35 @@ header {
         margin-top: 15px;
         margin-bottom: 50px;
     }
+    .card,.card2,.card3,.card4,.card5 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* grid positions for cards */
     .card {
-        grid-column: 1;
+        grid-column: 3;
         }
         .card2 {
-            grid-column: 1;
+            grid-column: 3;
             grid-row: 2;
             }
         .card3 {
-                grid-column: 1;
+                grid-column: 3;
                 grid-row: 3;
                 }
                 .card4 {
-                    grid-column: 1;
+                    grid-column: 3;
                     grid-row: 4;
                     }
                 .card5 {
-                        grid-column: 1;
+                        grid-column: 3;
                         grid-row: 5;
                         }
         .container {
         display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+        }
+        #body {
+            grid-column: 2/5;
         }
 }
