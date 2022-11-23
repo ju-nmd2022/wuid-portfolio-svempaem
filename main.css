@@ -1,11 +1,12 @@
 
+
 html,body {
     background-color: #ededed;
     height: 100%;
 }
 body {
-    margin: 0px;
-    padding: 0px;
+    padding: 0%;
+    margin: 0%;
 }
 /* The following 3 lines of code were taken from https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
 .pagecontainer {
@@ -20,31 +21,28 @@ header {
     position: absolute;
     top: 0px;
 }
-#burgermenu {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    visibility: hidden;
-}
 .headcontainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4,25px);
+}
+.container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr) ;
     contain: content;
 }
+#headbutton1,#headbutton2,#headbutton3 {
+    grid-row: 4;
+}
 #headbutton1 {
     grid-column: 2;
-    grid-row: 2;
 }
 #headbutton2 {
     grid-column: 3;
-    grid-row: 2;
 }
 #headbutton3 {
     grid-column: 4;
-    grid-row: 2;
 }
 #headbutton1,#headbutton2,#headbutton3 {
     font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
@@ -354,6 +352,14 @@ a:link,a:visited,a:hover,a:active {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+/* initially hidden content */
+.burgermenu {
+    visibility: hidden;
+}
+.burgerlist {
+    visibility: hidden;
+}
+/* changing card positions due to smaller width */
 @media screen and (max-width: 960px) and (min-width: 760px) {
     .card,.card4 {
         width: 200px;
@@ -395,6 +401,7 @@ a:link,a:visited,a:hover,a:active {
     left: 0px;
 }
 }
+/* compressing topbar */
 @media screen and (max-width: 870px) {
     /* header */
 header {
@@ -406,7 +413,7 @@ header {
 .headcontainer {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr) ;
+    grid-template-rows: repeat(7, 10px) ;
 }
 #selogo {
     grid-column: 1/4;
@@ -419,15 +426,15 @@ header {
 }
 #headbutton1 {
     grid-column: 4;
-    grid-row: 1;
+    grid-row: 2;
 }
 #headbutton2 {
     grid-column: 5;
-    grid-row: 1;
+    grid-row: 2;
 }
 #headbutton3 {
     grid-column: 4/6;
-    grid-row: 2;
+    grid-row: 5;
 }
 #headbutton1,#headbutton2,#headbutton3 {
     font-size: 10pt;
@@ -488,12 +495,60 @@ grid-template-columns: repeat(4, 1fr);
                             }
 }
 @media screen and (max-width: 670px) {
+    header {
+        contain: none;
+    }
     #headbutton1,#headbutton2,#headbutton3 {
         visibility: hidden;
     }
-    #burgermenu {
+    .burgermenu {
         visibility: visible;
+        }
+        #burger {
+        height: 20px;
+        position: absolute;
+        top: 25px;
+        right: 25px;
     }
+        #burgercheck {
+            visibility: hidden;
+        }
+        #burgercheck:checked ~ .burgerlist {
+            visibility: visible;
+        }
+        .burgerlist {
+            color: white;
+            background-color: #000000;
+            width: 50vw;
+            height: 80vh;
+            text-align: right;
+            position: absolute;
+            right: 0;
+            top: 70px;
+            list-style: none;
+            font-family: 'andalemono', Arial, Helvetica, sans-serif;
+            text-align: right;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(30,3vh);
+            z-index: 1;
+            padding: 0%;
+            margin: 0%;
+        }
+        #burgersiteone,#burgersitetwo,#burgersitethree {
+            font-size: max(3vh,20px);
+            grid-column: 1/span 3;
+            padding-right: 5vw;
+        }
+        #burgersiteone {
+            grid-row: 2;
+        }
+        #burgersitetwo {
+            grid-row: 6;
+        }
+        #burgersitethree {
+            grid-row: 10;
+        }
     .detailcard {
         width: 300px;
         height: 800px;
@@ -502,20 +557,6 @@ grid-template-columns: repeat(4, 1fr);
         top: 410px;
         left: 15px;
     }
-}
-@media screen and (max-width: 545px)  {
-.headcontainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-#selogo {
-    grid-column: 1/4;
-    width: 300px;
-    height: auto;
-    margin-left:20px ;
-    margin-bottom: 20px;
-    place-self: center;
-}
 }
 @media screen and (max-width: 490px) {
     .card,.card2,.card3,.card4,.card5 {
