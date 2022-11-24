@@ -20,6 +20,7 @@ header {
     height: 100px;
     position: absolute;
     top: 0px;
+    z-index: 1;
 }
 .headcontainer {
     display: grid;
@@ -64,6 +65,84 @@ header {
     height: auto;
     max-width: 100%;
     max-height: auto;
+}
+.herosection {
+    background-color: #c74848;
+    height: 100vh;
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,10vh);
+    contain: content;
+}
+.svennameanimation {
+    font-size: 20em;
+    position: relative; 
+    bottom: 30vh;
+    left: 1vw; 
+    animation-name: svenanimation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    transition: transform 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+    visibility: hidden;
+}
+.aboutmehero,.aboutjkpghero,.myportfoliohero {
+    background: black;
+    color: white;
+    /* display: flex;
+    place-items: center; */
+    width: 200px;
+    height: 50px;
+    position: relative;
+    bottom: -8vh;
+    grid-row: 5;
+    font-family: 'Andale Mono', Arial, Helvetica, sans-serif;
+    border-radius: 25px;
+    contain: content;
+    animation-name: herobuttonanimation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-delay: 1s;
+    transition: transform 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+    visibility: hidden;
+}
+.aboutmehero {
+    left: 20vw;
+}
+.aboutjkpghero {
+    left: -6vw;
+}
+.myportfoliohero {
+    left: 4vw;
+}
+.herobuttontext {
+    position: absolute;
+    left: 20px;
+    right: auto;
+}
+@keyframes svenanimation {
+    from {
+        visibility: hidden;
+        left: 1vw;
+    }
+    to {
+        visibility: visible;
+        left: 28vw;
+    }   
+}
+@keyframes herobuttonanimation {
+    from {
+        visibility: hidden;
+        bottom: -8vh;
+    }
+    to {
+        visibility: visible;
+        bottom: -15vh;
+    }
 }
 /* bodywrap */
 .wrap {
